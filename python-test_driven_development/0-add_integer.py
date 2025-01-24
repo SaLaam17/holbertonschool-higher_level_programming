@@ -3,6 +3,7 @@
 Return the sum of two integers or floats.
 """
 
+
 def add_integer(a, b=98):
 
     """
@@ -19,5 +20,5 @@ def add_integer(a, b=98):
     if isinstance(b, float):
         b = int(b)
 
-    sum = a +b
+    sum = a + b
     return sum
