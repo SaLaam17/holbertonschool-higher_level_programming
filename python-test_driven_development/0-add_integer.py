@@ -2,7 +2,6 @@
 """
 Return the sum of two integers or floats.
 """
-import doctest
 
 def add_integer(a, b=98):
 
