@@ -1,0 +1,12 @@
+#description:
+'add_integer(a, b)': return the sum (a + b) of two integers or floats.
+
+#Import de la fonction:
+>>> add_integer = __import__("0-add_integer").add_integer
+
+Example usage:
+
+>>> add_integer(5, 7)
+12
+>>> add_integer(5, -7)
+-2
