@@ -12,3 +12,5 @@ Example usage:
 -2
 >>> add_integer(2)
 100
+>>> add_integer(100.3, -2)
+98
