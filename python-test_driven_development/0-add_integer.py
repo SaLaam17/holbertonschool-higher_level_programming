@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Return the sum of two integers or floats.
+This module provides a function that adds two integers or floats.
 """
 
 
@@ -8,6 +8,16 @@ def add_integer(a, b=98):
 
     """
     'add_integer(a, b)': return the sum (a + b) of two integers or floats.
+
+    Args:
+        a: The first integer or float.
+        b: The second integer or float, default is 98.
+
+    Returns:
+        The sum of a and b as an integer.
+    
+    Raises:
+        TypeError: If a or b are not integers or floats.
     """
 
     if not isinstance(a, (int, float)):
@@ -15,8 +25,9 @@ def add_integer(a, b=98):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
 
-    a = int(a)
-    b = int(b)
+    if isinstance(a, float):
+        a = int(a)
+    if isinstance(b, float):
+        b = int(b)
 
-    sum = a + b
-    return sum
+    return a + b

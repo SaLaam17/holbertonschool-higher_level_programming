@@ -1,7 +1,7 @@
 #description:
 'add_integer(a, b)': return the sum (a + b) of two integers or floats.
 
-#Import de la fonction:
+#Import of fonction:
 >>> add_integer = __import__("0-add_integer").add_integer
 
 Example usage:
@@ -24,6 +24,10 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer or a float
 >>> add_integer("School", 4)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer or a float
+>>> add_integer(None, 5)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer or a float
