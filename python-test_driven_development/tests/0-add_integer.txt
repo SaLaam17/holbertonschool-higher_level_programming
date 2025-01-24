@@ -8,7 +8,7 @@ Example usage:
 #base case
 >>> add_integer(5, 7)
 12
->>> add_integer(5,-7)
+>>> add_integer(5, -7)
 -2
 # case with default value for b
 >>> add_integer(2)
