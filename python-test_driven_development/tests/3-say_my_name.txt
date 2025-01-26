@@ -13,7 +13,7 @@ My name is John Smith
 My name is Walter White
 
 >>> say_my_name("Bob")
-My name is Bob
+My name is Bob 
 
 # case with incorrect types
 >>> say_my_name(12, "White")
