@@ -56,3 +56,13 @@ TypeError: Each row of the matrix must have the same size
 Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# div being a string
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, "three")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
