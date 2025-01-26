@@ -1,0 +1,28 @@
+#description:
+'say_my_name(first_name, last_name="")': My name is <first name> <last name>
+
+#Import of fonction:
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Example usage:
+#base case
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+>>> say_my_name("Bob")
+My name is Bob
+
+# case with incorrect types
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+>>> say_my_name("John", 12)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
