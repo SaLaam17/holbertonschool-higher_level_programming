@@ -74,3 +74,18 @@ TypeError: div must be a number
 ... ]
 >>> matrix_divided(matrix, float('inf'))
 [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+# missing argument matrix
+>>> matrix_divided(None, 3)
+Traceback (most recent call last):
+    ...
+ValueError: Both arguments matrix and div must be provided
+
+# missing argument div
+>>> matrix_divided([
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ], None)
+Traceback (most recent call last):
+    ...
+ValueError: Both arguments matrix and div must be provided
