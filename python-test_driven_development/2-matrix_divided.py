@@ -20,7 +20,10 @@ def matrix_divided(matrix, div):
         TypeError: If rows of the matrix are not of the same size.
         TypeError: If div is not a number (integer or float).
         ZeroDivisionError: If div is zero.
+        ValueError: If any argument is missing.
     """
+    if matrix is None or div is None:
+        raise ValueError("Both arguments matrix and div must be provided")
 
     if not isinstance(matrix, list) or not all(isinstance(row, list)
                                                for row in matrix):
