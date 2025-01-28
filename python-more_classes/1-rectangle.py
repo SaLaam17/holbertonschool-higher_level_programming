@@ -9,7 +9,7 @@ class Rectangle:
     Represent a rectangle with width and height attributs
     """
 
-    def __init__(self, width = 0, height = 0 ):
+    def __init__(self, width=0, height=0):
         """
         Initializes the square with a given size.
         Args:
@@ -41,7 +41,7 @@ class Rectangle:
         """
         Setter method for the width attribute.
         Returns:
-            value (int): the new width of thr rectangle. 
+            value (int): the new width of thr rectangle.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -63,7 +63,7 @@ class Rectangle:
         """
         Setter method for the height attribute.
         Returns:
-            value (int): the new height of thr rectangle. 
+            value (int): the new height of thr rectangle.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
