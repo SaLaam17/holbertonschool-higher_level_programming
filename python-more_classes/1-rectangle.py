@@ -14,7 +14,7 @@ class Rectangle:
         Initializes the square with a given size.
         Args:
             width (int): the width of the rectangle
-        height (int): the heigth of the rectangle
+        height (int): the height of the rectangle
         """
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
@@ -25,7 +25,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if height < 0:
             raise ValueError("height must be >= 0")
-        self.__heigth = height
+        self.__height = height
 
     @property
     def width(self):
@@ -50,23 +50,23 @@ class Rectangle:
         self.__width = value
 
     @property
-    def heigth(self):
+    def height(self):
         """
         Getter method for the heigth attribute.
         Returns:
             int: the heigth of the rectangle
         """
-        return self.__heigth
+        return self.__height
 
-    @heigth.setter
-    def heigth(self, value):
+    @height.setter
+    def height(self, value):
         """
-        Setter method for the heigth attribute.
+        Setter method for the height attribute.
         Returns:
-            value (int): the new heigth of thr rectangle. 
+            value (int): the new height of thr rectangle. 
         """
         if not isinstance(value, int):
-            raise TypeError("heigth must be an integer")
+            raise TypeError("height must be an integer")
         if value < 0:
-            raise ValueError("heigth must be >= 0")
-        self.__heigth = value
+            raise ValueError("height must be >= 0")
+        self.__height = value
