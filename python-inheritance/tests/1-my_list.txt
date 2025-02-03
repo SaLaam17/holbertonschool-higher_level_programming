@@ -2,7 +2,7 @@
 'MyList': A custom list class that extends the built-in list class.
 Includes a method 'print_sorted' that prints the list, but sorted in ascending order.
 
-# Import of class:
+# Loading the class:
 >>> MyList = __import__('1-my_list').MyList
 
 # Example usage:
