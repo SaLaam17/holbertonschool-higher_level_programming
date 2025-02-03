@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
 Module that defines a class MyList
-that inherits from list
+that extends the built-in list class
 """
 
 
 class MyList(list):
     """
-    A custom list class that inherits from list
+    A custom list class that extends the built-in list
     """
     def print_sorted(self):
         """
