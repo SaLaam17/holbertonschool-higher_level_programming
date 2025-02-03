@@ -1,5 +1,6 @@
 # Description:
-'MyList': A custom list class that inherits from the built-in list class. Includes a method 'print_sorted' that prints the list, but sorted in ascending order.
+'MyList': A custom list class that extends the built-in list class.
+Includes a method 'print_sorted' that prints the list, but sorted in ascending order.
 
 # Import of class:
 >>> MyList = __import__('1-my_list').MyList
