@@ -21,7 +21,7 @@ class BaseGeometry:
         Args:
             name (str): The name of the parameter.
             value (int): The parameter to validate.
-        
+
         Raises:
             TypeError: If value is not an integer.
             ValueError: If value is less than or equal to 0.
