@@ -2,10 +2,13 @@
 'MyList': A custom list class that extends the built-in list class.
 Includes a method 'print_sorted' that prints the list, but sorted in ascending order.
 
-# Import of class:
+# Loading the class:
 >>> MyList = __import__('1-my_list').MyList
 
 # Example usage:
+
+# Empty list:
+>>> 
 
 # Creation of a MyList instance and adding elements
 >>> my_list = MyList()
@@ -26,3 +29,7 @@ Includes a method 'print_sorted' that prints the list, but sorted in ascending o
 # Ensure the original list remains unchanged
 >>> print(my_list)
 [1, 4, 2, 3, 5]
+
+# Check length:
+vérifier longueur 1-my_list.txt 
+__import__("my_module").MyClass.my_function.__doc__
