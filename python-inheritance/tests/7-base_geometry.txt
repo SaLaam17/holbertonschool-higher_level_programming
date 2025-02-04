@@ -1,6 +1,36 @@
 # Description:
 'BaseGeometry': a custom class
+Includes public instance methods area and integer_validator
 
 # Loading the class:
->>> base_geometry__import__(7-base_geometry.py).base_geometry
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+# Example usage:
+
+# Create an instance of BaseGeometry
+>>> bg = BaseGeometry()
+
+# Use the integer_validator method
+>>> bg.integer_validator("my_int", 12)  # No output, value is valid
+>>> bg.integer_validator("width", 89)   # No output, value is valid
+
+# This will raise an exception because the value is not an integer
+>>> try:
+...     bg.integer_validator("name", "John")
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] name must be an integer
+
+# This will raise an exception because the value is not greater than 0
+>>> try:
+...     bg.integer_validator("age", 0)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] age must be greater than 0
+
+# This will raise an exception because the value is not greater than 0
+>>> try:
+...     bg.integer_validator("distance", -4)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+[ValueError] distance must be greater than 0
