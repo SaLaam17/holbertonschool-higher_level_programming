@@ -1,0 +1,6 @@
+# Description:
+'BaseGeometry': a custom class
+
+# Loading the class:
+>>> base_geometry__import__(7-base_geometry.py).base_geometry
+
