@@ -39,6 +39,7 @@ class Rectangle(BaseGeometry):
     def __init__(self, width, height):
         """
         Initialises the rectangle.
+
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
