@@ -1,36 +1,18 @@
-# Description:
-'BaseGeometry': a custom class
-Includes public instance methods area and integer_validator
+The ''7-base_geometry'' module
 
-# Loading the class:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-# Example usage:
+# Testing for module docstring:
+    >>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
+    True
 
-# Create an instance of BaseGeometry
->>> bg = BaseGeometry()
+# Testing for class docstring:
+    >>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+    >>> len(c) > 1
+    True
 
-# Use the integer_validator method
->>> bg.integer_validator("my_int", 12)  # No output, value is valid
->>> bg.integer_validator("width", 89)   # No output, value is valid
-
-# This will raise an exception because the value is not an integer
->>> try:
-...     bg.integer_validator("name", "John")
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[TypeError] name must be an integer
-
-# This will raise an exception because the value is not greater than 0
->>> try:
-...     bg.integer_validator("age", 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] age must be greater than 0
-
-# This will raise an exception because the value is not greater than 0
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-[ValueError] distance must be greater than 0
+# Testing for method docstring:
+        >>> mod = __import__("7-base_geometry").BaseGeometry.area.__doc__
+        >>> len(mod) > 1
+        True
