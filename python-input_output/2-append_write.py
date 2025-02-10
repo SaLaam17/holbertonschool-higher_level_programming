@@ -2,6 +2,8 @@
 """
 Module documentation.
 """
+
+
 def append_write(filename="", text=""):
     """
     Function that appends a string at the end of a text file (UTF8)
