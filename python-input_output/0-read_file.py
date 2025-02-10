@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module documentation.
+Module Documentation.
 """
 def read_file(filename=""):
     """
