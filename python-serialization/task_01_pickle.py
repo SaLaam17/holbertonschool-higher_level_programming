@@ -12,12 +12,12 @@ class CustomObject:
 
     def __init__(self, name, age, is_student):
         """
-        Initializes the square with a given size.
+        Initializes the object with a given name, age, and is_student status.
         Args:
-            name (a string): The name of the person.
-            age (an integer): The age of the person.
-            is_student (a boolean): True if the person
-            is a student, otherwise False.
+            name (str): The name of the person.
+            age (int): The age of the person.
+            is_student (bool): True if the person is a student,
+            otherwise False.
         """
 
         self.name = name
@@ -26,7 +26,7 @@ class CustomObject:
 
     def display(self):
         """
-        method to print out the object’s attributes
+        method to print out the object’s attributes.
         """
         print("Name: {}\nAge: {}\nIs Student: {}".format(
             self.name, self.age, self.is_student))
@@ -39,7 +39,7 @@ class CustomObject:
         if not filename:
             return None
         try:
-            with open("filename", "wb") as file:
+            with open(filename, 'wb') as file:
                 pickle.dump(self, file)
         except Exception as e:
             print(f"Error during serialization: {e}")
@@ -54,7 +54,7 @@ class CustomObject:
         if not filename:
             return None
         try:
-            with open("filename", "rb") as file:
+            with open(filename, 'rb') as file:
                 return pickle.load(file)
         except Exception as e:
             print(f"Error during deserialization: {e}")
