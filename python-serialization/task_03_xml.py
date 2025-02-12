@@ -35,11 +35,34 @@ def deserialize_from_xml(filename):
     Returns:
         dict: The deserialized Python dictionary.
     """
-    tree = ET.parse(filename)
-    root = tree.getroot()
-    
-    dictionary = {}
-    for item in root:
-        dictionary[item.tag] = item.text
+    try:
+        tree = ET.parse(filename)
+        root = tree.getroot()
 
-    return dictionary
+        dictionary = {}
+        for item in root:
+            key = item.tag
+            value = item.text
+
+            # Conversion des types de données
+            if value.isdigit():
+                value = int(value)
+            elif value.lower() == 'true':
+                value = True
+            elif value.lower() == 'false':
+                value = False
+            else:
+                try:
+                    value = float(value)
+                except ValueError:
+                    pass
+
+            dictionary[key] = value
+
+        return dictionary
+    except FileNotFoundError:
+        print("File not found")
+        return {}
+    except ET.ParseError:
+        print("Error parsing the XML file")
+        return {}
