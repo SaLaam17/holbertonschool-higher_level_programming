@@ -44,17 +44,10 @@ def deserialize_from_xml(filename):
             value = item.text
 
             # Conversion des types de données
-            if value.isdigit():
-                value = int(value)
-            elif value.lower() == 'true':
+            if value.lower() == 'true':
                 value = True
             elif value.lower() == 'false':
                 value = False
-            else:
-                try:
-                    value = float(value)
-                except ValueError:
-                    pass
 
             dictionary[key] = value
 
