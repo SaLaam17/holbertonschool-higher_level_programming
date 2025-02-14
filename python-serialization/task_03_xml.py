@@ -5,6 +5,7 @@ using XML as an alternative format to JSON.
 """
 import xml.etree.ElementTree as ET
 
+
 def serialize_to_xml(dictionary, filename):
     """
     Function that serializes the dictionary into XML
@@ -43,7 +44,6 @@ def deserialize_from_xml(filename):
             key = item.tag
             value = item.text
 
-            # Conversion des types de données
             if value.lower() == 'true':
                 value = True
             elif value.lower() == 'false':
