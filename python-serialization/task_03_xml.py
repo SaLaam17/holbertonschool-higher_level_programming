@@ -14,15 +14,15 @@ def serialize_to_xml(dictionary, filename):
         dictionary (dict): The Python dictionary to serialize.
         filename (str): The path to the output XML file.
     """
-    root = ET.Element("data")
-
+    root = ET.Element('data')
     for key, value in dictionary.items():
-        item = ET.Element(key)
-        item.text = str(value)
-        root.append(item)
+        child = ET.SubElement(root, key)
+        child.text = str(value)
 
     tree = ET.ElementTree(root)
-    tree.write(filename)
+
+    with open(filename, 'w') as file:
+        tree.write(filename, encoding="utf-8", xml_declaration=True)
 
 
 def deserialize_from_xml(filename):
@@ -35,26 +35,8 @@ def deserialize_from_xml(filename):
     Returns:
         dict: The deserialized Python dictionary.
     """
-    try:
-        tree = ET.parse(filename)
-        root = tree.getroot()
+    tree = ET.parse(filename)
+    root = tree.getroot()
+    dictionary = {child.tag: child.text for child in root}
 
-        dictionary = {}
-        for item in root:
-            key = item.tag
-            value = item.text
-
-            if value.lower() == 'true':
-                value = True
-            elif value.lower() == 'false':
-                value = False
-
-            dictionary[key] = value
-
-        return dictionary
-    except FileNotFoundError:
-        print("File not found")
-        return {}
-    except ET.ParseError:
-        print("Error parsing the XML file")
-        return {}
+    return dictionary
