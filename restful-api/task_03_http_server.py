@@ -14,24 +14,23 @@ PORT = 8000
 class SubclassBaseHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     """
     Subclass of http.server.BaseHTTPRequestHandler.
-
     """
 
     def do_GET(self):
         """
         method to handle GET requests.
         """
-        if self.path == "/status":
-            self.send_response(200)
-            self.send_header("Content-type", "text/plain")
-            self.end_headers()
-            self.wfile.write(b"OK")
-
-        elif self.path == "/":
+        if self.path == "/":
             self.send_response(200)
             self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
+
+        elif self.path == "/status":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"OK")
 
         elif self.path == "/data":
             self.send_response(200)
