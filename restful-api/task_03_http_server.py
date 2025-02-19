@@ -51,7 +51,8 @@ class SubclassBaseHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
 
             info = {
-                "version": "1.0", "description": "A simple API built with http.server"
+                "version": "1.0",
+                "description": "A simple API built with http.server"
             }
             json_info = json.dumps(info)
 
