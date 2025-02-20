@@ -24,7 +24,7 @@ def home():
 
 @app.route("/data")
 # Define a route for the root URL ("/").
-def get_users():
+def data():
     """
     Function to handle data route.
     """
@@ -48,8 +48,9 @@ def get_username_obj(username):
     Function that returns the full object
     corresponding to the provided username
     """
-    if username in users:
-        return jsonify(users[username])
+    user = users.get(username)
+    if user:
+        return jsonify(users)
     else:
         return jsonify({"error": "User not found"}), 404
 
