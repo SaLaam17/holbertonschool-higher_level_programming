@@ -19,7 +19,7 @@ def home():
     """
     Function to handle this route (“/”).
     """
-    return "<p>Welcome to the Flask API!</p>"
+    return "Welcome to the Flask API!"
 
 
 @app.route("/data")
@@ -38,7 +38,7 @@ def get_status():
     """
     Function to return status.
     """
-    return "<p>OK</p>"
+    return "OK"
 
 
 @app.route("/users/<username>")
@@ -52,7 +52,7 @@ def get_username_obj(username):
     if user:
         return jsonify(user)
     else:
-        return jsonify({"error": "User not found"})
+        return jsonify({"error": "User not found"}), 404
 
 
 @app.route("/add_user", methods=['POST'])
