@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-
+Module to develop a Simple API using Python with Flask
 """
 
 from flask import Flask
@@ -48,9 +48,8 @@ def get_username_obj(username):
     Function that returns the full object
     corresponding to the provided username
     """
-    user = users.get(username)
-    if user:
-        return jsonify(user)
+    if username in users:
+        return jsonify(users[username])
     else:
         return jsonify({"error": "User not found"}), 404
 
