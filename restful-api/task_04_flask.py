@@ -24,7 +24,7 @@ def home():
     """
     Function to handle this route (“/”).
     """
-    return "Welcome to the Flask API!"
+    return "<p>Welcome to the Flask API!</p>"
 
 
 @app.route("/data")
@@ -43,7 +43,7 @@ def get_status():
     """
     Function to return status.
     """
-    return "OK"
+    return "<p>OK</p>"
 
 
 @app.route("/users/<username>")
