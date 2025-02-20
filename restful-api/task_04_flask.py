@@ -14,16 +14,16 @@ users = {}
 
 
 @app.route("/")
-# Define a route for the root URL (“/”).
+# Define a route for the root URL ("/").
 def home():
     """
-    Function to handle this route (“/”).
+    Function to handle this route ("/").
     """
     return "Welcome to the Flask API!"
 
 
 @app.route("/data")
-# Define a route for the root URL (“/”).
+# Define a route for the root URL ("/").
 def get_users():
     """
     Function to handle data route.
@@ -33,7 +33,7 @@ def get_users():
 
 
 @app.route("/status")
-# Define a route for the root URL (“/”).
+# Define a route for the root URL ("/").
 def get_status():
     """
     Function to return status.
