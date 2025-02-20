@@ -10,7 +10,11 @@ from flask import request
 
 app = Flask(__name__)
 
-users = {}
+users = {
+    "jane": {"username": "jane", "name": "Jane",
+             "age": 28, "city": "Los Angeles"},
+    "john": {"username": "john", "name": "John",
+             "age": 30, "city": "New York"}}
 
 
 @app.route("/")
@@ -28,8 +32,8 @@ def data():
     """
     Function to handle data route.
     """
-    username = list(users.keys())
-    return jsonify(username)
+    usernames = list(users.keys())
+    return jsonify(usernames)
 
 
 @app.route("/status")
@@ -50,7 +54,7 @@ def get_username_obj(username):
     """
     user = users.get(username)
     if user:
-        return jsonify(users)
+        return jsonify(user)
     else:
         return jsonify({"error": "User not found"}), 404
 
@@ -66,7 +70,12 @@ def add_user():
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
-    users[username] = new_user
+    users[username] = {
+        "username": username,
+        "name": new_user.get("name"),
+        "age": new_user.get("age"),
+        "city": new_user.get("city")
+    }
     return jsonify({"message": "User added", "user": new_user}), 201
 
 
