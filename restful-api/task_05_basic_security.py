@@ -85,7 +85,7 @@ def jwt_protected():
 
 
 @app.route("/admin-only", methods=["GET"])
-@auth.login_required(role=["admin1", "user"])
+@auth.login_required(role=["admin"])
 def admin_only():
     """
     Function that checks if the user is an admin.
