@@ -52,7 +52,7 @@ def basic_protected():
     Function that checks if the user provides
     valid basic authentication credentials.
     """
-    return "Basic Auth: Access Granted"
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route("/login", methods=["POST"])
@@ -70,7 +70,7 @@ def login():
             "username": username,
             "role": users[username]["role"]
         })
-        return jsonify(access_token=access_token)
+        return jsonify(access_token=access_token), 200
     else:
         return "Unauthorized response", 401
 
@@ -81,8 +81,7 @@ def jwt_protected():
     """
     Function that checks if the user provides a valid JWT token.
     """
-    current_user = get_jwt_identity()
-    return ("JWT Auth: Access Granted")
+    return ("JWT Auth: Access Granted"), 200
 
 
 @app.route("/admin-only", methods=["GET"])
@@ -93,7 +92,7 @@ def admin_only():
     """
     current_user = get_jwt_identity()
     if current_user["role"] ==  "admin":
-        return "Admin Access: Granted"
+        return "Admin Access: Granted", 200
     else:
         return jsonify("error: Admin access required"), 403
 
@@ -101,7 +100,7 @@ def admin_only():
 @jwt.unauthorized_loader
 def handle_unauthorized_error(err):
     return jsonify({"error": "Missing or invalid token"}), 401
-
+S
 @jwt.invalid_token_loader
 def handle_invalid_token_error(err):
     return jsonify({"error": "Invalid token"}), 401
