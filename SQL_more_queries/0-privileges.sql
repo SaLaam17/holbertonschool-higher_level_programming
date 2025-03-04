@@ -3,6 +3,10 @@
 CREATE USER 'user_0d_1'@'localhost';
 -- Query that creates user_0d_2
 CREATE USER 'user_0d_2'@'localhost';
+-- Grant all privileges to user_0d_1
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+-- Grant all privileges to user_0d_2
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
 -- Query that lists all privileges of the MySQL users user_0d_1
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 -- Query that lists all privileges of the MySQL users user_0d_2
