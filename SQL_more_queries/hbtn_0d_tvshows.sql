@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `tv_genres`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tv_genres` (
-  `id` int(11) NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB INTEGER PRIMARY KEY AUTOINCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,10 +74,10 @@ DROP TABLE IF EXISTS `tv_shows`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tv_shows` (
-  `id` int(11) NOT NULL INTEGER PRIMARY KEY AUTOINCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(256) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB INTEGER PRIMARY KEY AUTOINCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
