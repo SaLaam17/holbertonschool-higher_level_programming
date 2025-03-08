@@ -1,4 +1,4 @@
-#!/Users/laamrisaid/holberton/holbertonschool-higher_level_programming/python-object_relational_mapping/venv/bin/python3
+#!/usr/bin/python3
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
@@ -12,8 +12,7 @@ if __name__ == "__main__":
 
     states = session.query(State).all()
 
-    if states:
-        for state in states:
-            print(f"{state.id}: {state.name}")
+    for state in states:
+        print(f"{state.id}: {state.name}")
 
     session.close()
