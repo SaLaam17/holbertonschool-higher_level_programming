@@ -1,4 +1,4 @@
-#!/Users/laamrisaid/holberton/holbertonschool-higher_level_programming/python-object_relational_mapping/venv/bin/python3
+#!/usr/bin/python3
 """
 Script that lists all State objects from the database hbtn_0e_6_usa.
 """

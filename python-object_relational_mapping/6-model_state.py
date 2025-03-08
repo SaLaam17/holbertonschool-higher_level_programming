@@ -1,4 +1,4 @@
-#!/Users/laamrisaid/holberton/holbertonschool-higher_level_programming/python-object_relational_mapping/venv/bin/python3
+#!/usr/bin/python3
 """
 Start link class to table in database.
 """
