@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/Users/laamrisaid/holberton/holbertonschool-higher_level_programming/python-object_relational_mapping/venv/bin/python3
 """
 Script that adds the State object “Louisiana” to the database hbtn_0e_6_usa.
 """
@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = Session()
 
     new_state = State(name='Louisiana')
-
     session.add(new_state)
     session.commit()
+    print(new_state.id)
     session.close()
