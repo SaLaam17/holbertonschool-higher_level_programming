@@ -1,27 +1,19 @@
 #!/Users/laamrisaid/holberton/holbertonschool-higher_level_programming/python-object_relational_mapping/venv/bin/python3
-"""
-Lists all State objects from the database hbtn_0e_6_usa.
-"""
-import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+from model_state import State
+import sys
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    engine = create_engine(
-        f'mysql+mysqldb://{username}:{password}@localhost/{database}',
-        pool_pre_ping=True)
-
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id).all()
+    states = session.query(State).all()
 
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    if states:
+        for state in states:
+            print(f"{state.id}: {state.name}")
 
     session.close()
