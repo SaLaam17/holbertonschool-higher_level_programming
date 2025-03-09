@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 """
-Script that prints all City objects from the database hbtn_0e_14_usa.
+This script prints all City objects from the database hbtn_0e_14_usa.
+
+Arguments:
+    mysql_username (str): MySQL username.
+    mysql_password (str): MySQL password.
+    database_name (str): Name of the database.
+
+It connects to a MySQL database using SQLAlchemy, fetches all cities,
+and displays them ordered by city ID, with the format:
+    <state name>: (<city id>) <city name>
 """
 
 from sqlalchemy import create_engine

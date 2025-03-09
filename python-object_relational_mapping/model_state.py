@@ -11,7 +11,17 @@ Base = declarative_base()
 
 
 class State(Base):
-    """ State class to link to the 'states' table in the database """
+    """
+    State class represents the 'states' table in the database.
+
+    Attributes:
+        id (int): The state's unique identifier (Primary Key).
+        name (str): The name of the state.
+
+    Relationships:
+        cities (list): List of City objects related to this state.
+    """
+
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
