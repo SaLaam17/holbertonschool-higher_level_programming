@@ -25,8 +25,8 @@ if __name__ == "__main__":
     # Create a cursor object to interact with the database
     cur = conn.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE\
-                'N%' ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states WHERE BINARY name LIKE 'N%'\
+                ORDER BY states.id ASC")
 
     # Fetch all rows from the result of the query
     rows = cur.fetchall()
