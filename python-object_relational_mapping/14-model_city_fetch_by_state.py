@@ -18,6 +18,11 @@ from model_state import State, Base
 from model_city import City
 import sys
 
+if len(sys.argv) < 4:
+    print("Usage: python3 14-model_city_fetch_by_state.py\
+          <mysql_username> <mysql_password> <database_name>")
+    sys.exit(1)
+
 username = sys.argv[1]
 password = sys.argv[2]
 database = sys.argv[3]
