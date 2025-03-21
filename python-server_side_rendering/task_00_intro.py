@@ -15,8 +15,6 @@ def generate_invitations(template, attendees):
     Generates personalized invitation files from a template
     and a list of attendees.
     """
-
-
     # Check input types
     if not isinstance(template, str):
         print("Error: The template must be a string.")
@@ -35,7 +33,6 @@ def generate_invitations(template, attendees):
     if not attendees:
         print("No data provided, no output files generated.")
         return
-
 
     # Generate files for each attendee
     i = 0
